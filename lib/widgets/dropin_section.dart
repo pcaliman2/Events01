@@ -70,7 +70,12 @@ class _OWADropInSectionState extends State<OWADropInSection>
     return Container(
       width: _pageW,
       color: colors.backgroundColor,
-      padding: EdgeInsets.symmetric(horizontal: _padX),
+      padding: EdgeInsets.fromLTRB(
+        _padX,
+        SizeConfig.h(80), // 👈 AQUÍ aumentas el espacio arriba
+        _padX,
+        0,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

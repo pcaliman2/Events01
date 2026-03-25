@@ -27,6 +27,7 @@ import 'package:owa_flutter/widgets/therapies_section.dart';
 import 'package:owa_flutter/widgets/therapies_section_mobile.dart';
 import 'package:owa_flutter/widgets/whatsapp_floating_button.dart';
 import 'package:owa_flutter/widgets/dropin_section.dart';
+import 'package:owa_flutter/widgets/dropin_section_mobile.dart';
 
 class OWALandingPage extends StatefulWidget {
   const OWALandingPage({super.key, this.initialSection});
@@ -378,6 +379,7 @@ class _OWALandingPageState extends State<OWALandingPage> {
       _buildMobileDivider(),
       MembershipsSectionMobile(key: _membershipsKey),
       const BridgeSection(),
+      const OWADropInSectionMobile(),
       const OWAEventsSectionMobile(),
 
       /// Mobile Follow Us Section
