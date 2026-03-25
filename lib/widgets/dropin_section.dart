@@ -28,10 +28,8 @@ class _OWADropInSectionState extends State<OWADropInSection>
   double get _figTitleH => s(30);
 
   double get _figDividerW => s(1355.5625);
-  double get _figDividerH => s(1);
 
   double get _figDescW => s(521.93);
-  double get _figDescH => s(52);
 
   double get _gapTitleToDivider => s(12.95);
   double get _gapDividerToDesc => s(44.43);
@@ -348,6 +346,20 @@ class _OWADropInSectionState extends State<OWADropInSection>
                           ),
                         ),
                       ),
+                      if (item.price != null) ...[
+                        SizedBox(height: s(28)),
+                        Text(
+                          item.price!,
+                          style: TextStyle(
+                            fontFamily: 'Instrument Sans',
+                            fontWeight: FontWeight.w500,
+                            fontSize: SizeConfig.t(12),
+                            height: 1.0,
+                            color: const Color(0xFF6B6B6B),
+                            decoration: TextDecoration.none,
+                          ),
+                        ),
+                      ],
                       SizedBox(height: s(31.51)),
                       _buildBenefitsTwoCols(item.benefits),
                       SizedBox(height: SizeConfig.h(spaceBetweenRowsHeight)),
@@ -407,12 +419,14 @@ class _DropInItem {
   final String description;
   final List<String> benefits;
   final String imagePath;
+  final String? price;
 
   const _DropInItem({
     required this.title,
     required this.description,
     required this.benefits,
     required this.imagePath,
+    this.price,
   });
 }
 
@@ -429,6 +443,7 @@ const List<_DropInItem> _dropInItems = [
       'Detox support',
     ],
     imagePath: 'assets/follow_us.png',
+    price: '\$600 MXN',
   ),
   _DropInItem(
     title: 'MASSAGE',
@@ -442,18 +457,6 @@ const List<_DropInItem> _dropInItems = [
       'Resilience training',
     ],
     imagePath: 'assets/events3.png',
-  ),
-  _DropInItem(
-    title: 'HYPERBARIC',
-    description:
-        'Step into a high-oxygen recovery environment that supports physical restoration, mental sharpness, and performance readiness.',
-    benefits: [
-      'Recovery enhancement',
-      'Focus support',
-      'Wellness optimization',
-      'Energy restoration',
-      'Performance readiness',
-    ],
-    imagePath: 'assets/dropin_hyperbaric.jpg',
+    price: '\$600 MXN',
   ),
 ];
